@@ -40,7 +40,9 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps): JSX.Ele
 
   const loadStorage = () => {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY)
-    if (saved) setFavorites(JSON.parse(saved))
+    saved
+      ? setFavorites(JSON.parse(saved))
+      : localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify([]))
   }
 
   const setStateAndSave = (items: IPostProps[]) => {

@@ -32,7 +32,9 @@ export const FilterProvider = ({ children }: FilterProviderProps): JSX.Element =
 
   const loadStorage = () => {
     const saved = localStorage.getItem(LOCAL_STORAGE_KEY)
-    if (saved) setValue(JSON.parse(saved))
+    saved
+      ? setValue(JSON.parse(saved))
+      : localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify('angular'))
   }
 
   const setStateAndSave = ({ value }: IFilterProps) => {
