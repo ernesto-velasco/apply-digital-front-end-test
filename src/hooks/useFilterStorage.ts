@@ -1,3 +1,6 @@
+// Description:
+// customHook to manage filter query context
+
 import { useContext } from 'react'
 import type { FilterContextModel } from 'context/filterQueryContext'
 import { FilterContext } from 'context/filterQueryContext'

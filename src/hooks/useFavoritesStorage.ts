@@ -1,3 +1,6 @@
+// Description:
+// customHook to manage favorites context
+
 import { useContext } from 'react'
 import type { FavoritesContextModel } from 'context/favoritesContext'
 import { FavoritesContext } from 'context/favoritesContext'

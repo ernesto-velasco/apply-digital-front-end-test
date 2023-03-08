@@ -1,3 +1,7 @@
+// Description:
+// context to store filter query selected from dropdown menu
+// on localStorage
+
 import React, { useEffect, useState, useContext, createContext } from 'react'
 import type { ReactNode } from 'react'
 

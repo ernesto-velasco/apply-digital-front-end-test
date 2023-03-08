@@ -1,3 +1,6 @@
+// Description:
+// customHook to fetch and store data from HN Api on app context
+
 import camelcaseKeys from 'camelcase-keys'
 import { useEffect, useState } from 'react'
 import { usePagination } from './usePagination'
@@ -17,7 +20,9 @@ function useFetch(path: string) {
       })
       .then((data) => {
         const posts: IPostProps[] = camelcaseKeys(data.hits)
+        // set data on context state
         setData(posts)
+        // update total pages number from response
         setNbPages(data.nbPages)
       })
       .catch((err) => {

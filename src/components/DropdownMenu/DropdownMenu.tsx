@@ -1,3 +1,6 @@
+// Description:
+// Dropdown menu component for filter query options (angular, react, vue)
+
 import { useState, useEffect } from 'react'
 import styles from './dropdownmenu.module.css'
 import { filterOptions } from 'data/filterData'

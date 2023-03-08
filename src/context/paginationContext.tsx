@@ -1,3 +1,6 @@
+// Description:
+// context to manage pagination state
+
 import React, { useState, useEffect, createContext, useContext } from 'react'
 import type { ReactNode } from 'react'
 import { pager } from 'utils/getPaginationRange'

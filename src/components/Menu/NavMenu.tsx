@@ -1,3 +1,5 @@
+// Description:
+// Navigationn menu component
 import { useNavigate } from 'react-router-dom'
 import styles from './navmenu.module.css'
 
@@ -23,6 +25,7 @@ const MenuOption = ({ title, value, path, handleClick }: TMenuOpt) => (
   </>
 )
 
+// defaultValues for navigation menu
 const data = [
   { title: 'All', path: '/', value: 'all', default: true },
   { title: 'Favs', path: '/favorites', value: 'favs', default: false },

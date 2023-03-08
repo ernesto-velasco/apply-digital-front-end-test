@@ -1,9 +1,13 @@
+// Description:
+// Favorites page that contains news posts stored locally on localStorage
+
 import styles from './favorites.module.css'
 import { PostCard } from 'components'
 import { useFavoritesStorage } from 'hooks/useFavoritesStorage'
 import heartFillIcon from 'static/iconmonstr-favorite-3.svg'
 
 function Favorites() {
+  // use custo hook to get favorites from storage
   const { loading, favorites, removeStorageById } = useFavoritesStorage()
 
   if (loading) return <p>Loading...</p>

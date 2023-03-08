@@ -1,3 +1,6 @@
+// Description:
+// default values for dropdown menu options
+
 import iconAngular from 'static/image-138@3x.png'
 import iconReact from 'static/image-140@3x.png'
 import iconVue from 'static/image-141@3x.png'

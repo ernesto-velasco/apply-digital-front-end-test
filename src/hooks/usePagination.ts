@@ -1,3 +1,6 @@
+// Description:
+// customHook to manage pagination context
+
 import { useContext } from 'react'
 import type { PaginationContextModel } from 'context/paginationContext'
 import { PaginationContext } from 'context/paginationContext'

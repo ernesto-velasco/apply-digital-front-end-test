@@ -1,3 +1,5 @@
+// Description:
+// Header component shown above all pages
 import styles from './header.module.css'
 
 function Header() {

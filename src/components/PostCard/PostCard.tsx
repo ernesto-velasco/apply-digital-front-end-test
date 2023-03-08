@@ -1,3 +1,6 @@
+// Description:
+// Post card component for news post
+
 import moment from 'moment'
 import styles from './postcard.module.css'
 import type { IPostProps } from 'context/favoritesContext'

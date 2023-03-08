@@ -1,12 +1,16 @@
+// Description:
+// Pagination component for Home page
 import React from 'react'
 import styles from './pagination.module.css'
 import { usePagination } from 'hooks/usePagination'
 
 const Pagination = () => {
+  // init pagination context from custo hook
   const { pageRange, currentPage, prevPage, nextPage, goToPage } = usePagination()
 
   const pageClases = `${styles.page}`
   const pageActiveClases = `${styles.page} ${styles.active}`
+
   return (
     <div className={styles.pagination}>
       <div className={styles.page} onClick={() => prevPage()}>

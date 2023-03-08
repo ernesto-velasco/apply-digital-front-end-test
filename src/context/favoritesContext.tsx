@@ -1,3 +1,6 @@
+// Description:
+// context to manage favorites localStorage functions
+
 import React, { useEffect, useState, useContext, createContext } from 'react'
 import type { ReactNode } from 'react'
 
