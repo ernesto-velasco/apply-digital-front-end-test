@@ -13,6 +13,7 @@ function Favorites() {
   if (loading) return <p>Loading...</p>
   return (
     <div className={styles.posts}>
+      {favorites?.length == 0 ? <p>Nothing to show yet.</p> : null}
       {favorites?.map((post, index) => (
         <PostCard
           key={`${index}-${post.storyId}`}

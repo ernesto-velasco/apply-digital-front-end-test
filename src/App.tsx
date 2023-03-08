@@ -16,8 +16,10 @@ function App() {
             <BrowserRouter>
               <NavMenu />
               <Routes>
-                <Route path='/' element={<Home />} />
-                <Route path='/favorites' element={<Favorites />} />
+                <Route path='/'>
+                  <Route index element={<Home />} />
+                  <Route path='favorites' element={<Favorites />} />
+                </Route>
               </Routes>
             </BrowserRouter>
           </PaginationProvider>

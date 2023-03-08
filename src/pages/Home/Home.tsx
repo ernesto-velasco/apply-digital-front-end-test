@@ -22,12 +22,22 @@ function Home() {
   )
 
   // load favorites from localStorage from custo hook
-  const { loading: loadingFavorites, favorites, addToStorage } = useFavoritesStorage()
+  const {
+    loading: loadingFavorites,
+    favorites,
+    addToStorage,
+    removeStorageById,
+  } = useFavoritesStorage()
 
   // function to return the icon to be shown on card
-  const isInFavorites = (storyId: number) => {
+  const isInFavoritesIcon = (storyId: number) => {
     const isInFavs = favorites?.find((o) => o.storyId === storyId)
     return isInFavs ? heartFillIcon : heartIcon
+  }
+
+  const isInFavoritesFunc = (storyId: number) => {
+    const isInFavs = favorites?.find((o) => o.storyId === storyId)
+    return isInFavs ? removeStorageById : addToStorage
   }
 
   return (
@@ -39,8 +49,8 @@ function Home() {
           <PostCard
             key={`${index}-${post.storyId}`}
             post={post}
-            handleFavorites={addToStorage}
-            btnIcon={isInFavorites(post.storyId)}
+            handleFavorites={isInFavoritesFunc(post.storyId)}
+            btnIcon={isInFavoritesIcon(post.storyId)}
           />
         ))}
       </div>

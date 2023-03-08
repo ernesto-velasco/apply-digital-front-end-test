@@ -54,6 +54,8 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps): JSX.Ele
   }
 
   const addToStorage = (items: IPostProps) => {
+    if (favorites) console.log('no favorites', favorites)
+    if (!favorites) setFavorites([])
     if (!favorites) return
     const newItems = [...favorites, items]
     setStateAndSave(newItems)
