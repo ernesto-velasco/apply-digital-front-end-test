@@ -1,0 +1,30 @@
+.menu {
+  padding: 15px 0;
+  border-radius: 2px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu_opt {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+.menu_label {
+  width: 6.125rem;
+  height: 1.938rem;
+  padding: 0.188rem 2.438rem 0 2.5rem;
+  border-radius: 2px;
+  border: solid 1px #d6d6d6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.menu_opt:checked + .menu_label {
+  border: solid 1px var(--azure);
+  color: var(--azure);
+}

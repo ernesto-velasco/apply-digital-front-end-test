@@ -1,0 +1,10 @@
+.content {
+    max-width: 950px;
+    padding: 0 15px;
+    margin: auto;
+    position: relative;
+}
+
+.loading {
+    opacity: 0.5;
+}
