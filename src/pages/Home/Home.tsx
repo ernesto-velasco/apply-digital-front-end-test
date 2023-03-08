@@ -14,7 +14,7 @@ function Home() {
   const { data, loading } = useFetch(
     `https://hn.algolia.com/api/v1/search_by_date?query=${query}&page=${currentPage - 1}`,
   )
-  const { favorites, addToStorage } = useFavoritesStorage()
+  const { loading: loadingFavorites, favorites, addToStorage } = useFavoritesStorage()
 
   const isInFavorites = (storyId: number) => {
     const isInFavs = favorites?.find((o) => o.storyId === storyId)
@@ -24,7 +24,7 @@ function Home() {
   return (
     <div>
       <DropdownMenu />
-      {loading ? <p>Loading...</p> : null}
+      {loading || loadingFavorites ? <p>Loading...</p> : null}
       <div className={styles.posts}>
         {data?.map((post, index) => (
           <PostCard
