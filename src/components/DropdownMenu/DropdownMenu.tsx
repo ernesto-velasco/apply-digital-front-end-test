@@ -10,7 +10,7 @@ function DropdownMenu() {
   const handleClick = () => setIsOpen(!isOpen)
   const close = () => setIsOpen(false)
 
-  const { loading, value: filterStorageValue, addToStorage } = useFilterStorage()
+  const { value: filterStorageValue, addToStorage } = useFilterStorage()
 
   const title = 'Select your news'
   // btn clases
@@ -40,7 +40,7 @@ function DropdownMenu() {
       </div>
       {isOpen ? (
         <div className={styles.dropdownList}>
-          {filterOptions.map(({ optTitle, optValue, optIcon }, i) => (
+          {filterOptions.map(({ optTitle, optValue, optIcon }) => (
             <button
               key={optValue}
               className={optValue === filterStorageValue ? btnActiveClases : btnClases}

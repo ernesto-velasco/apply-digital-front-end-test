@@ -19,7 +19,7 @@ export interface IPostProps {
 }
 
 export interface FavoritesContextModel {
-  favorites: IPostProps[] | null
+  favorites: IPostProps[] | undefined
   loading: boolean
   loadStorage: () => void
   addToStorage: (items: IPostProps) => void
@@ -35,7 +35,7 @@ export const FavoritesContext = React.createContext<FavoritesContextModel>(
 )
 
 export const FavoritesProvider = ({ children }: FavoritesProviderProps): JSX.Element => {
-  const [favorites, setFavorites] = useState([])
+  const [favorites, setFavorites] = useState<IPostProps[]>()
   const [loading, setLoading] = useState(true)
 
   const loadStorage = () => {
@@ -43,17 +43,19 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps): JSX.Ele
     if (saved) setFavorites(JSON.parse(saved))
   }
 
-  const setStateAndSave = (items: any) => {
+  const setStateAndSave = (items: IPostProps[]) => {
     setFavorites(items)
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(items))
   }
 
   const addToStorage = (items: IPostProps) => {
+    if (!favorites) return
     const newItems = [...favorites, items]
     setStateAndSave(newItems)
   }
 
   const removeStorageById = (item: IPostProps) => {
+    if (!favorites) return
     const newFavoriteList = favorites.filter(
       (favorite: IPostProps) => favorite.storyId !== item.storyId,
     )

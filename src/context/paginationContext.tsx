@@ -10,10 +10,6 @@ interface PaginationContextState {
   isLoading: boolean
 }
 
-interface IPaginationProps {
-  value: string
-}
-
 export interface PaginationContextModel {
   currentPage: number
   nbPages: number | null
@@ -51,9 +47,7 @@ export const PaginationProvider = ({ children }: PaginationProviderProps): JSX.E
   }
 
   useEffect(() => {
-    console.log('init')
     setPageRange(pager(currentPage, nbPages))
-    console.log(currentPage)
     setLoading(false)
   }, [currentPage, nbPages])
 

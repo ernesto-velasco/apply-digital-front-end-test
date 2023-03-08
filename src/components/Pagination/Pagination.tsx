@@ -3,7 +3,7 @@ import styles from './pagination.module.css'
 import { usePagination } from 'hooks/usePagination'
 
 const Pagination = () => {
-  const { loading, pageRange, currentPage, prevPage, nextPage, goToPage } = usePagination()
+  const { pageRange, currentPage, prevPage, nextPage, goToPage } = usePagination()
 
   const pageClases = `${styles.page}`
   const pageActiveClases = `${styles.page} ${styles.active}`
