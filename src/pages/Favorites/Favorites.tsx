@@ -16,7 +16,7 @@ function Favorites() {
       {favorites?.length == 0 ? <p>Nothing to show yet.</p> : null}
       {favorites?.map((post, index) => (
         <PostCard
-          key={`${index}-${post.storyId}`}
+          key={`${index}-${post.parentId}`}
           post={post}
           handleFavorites={removeStorageById}
           btnIcon={heartFillIcon}

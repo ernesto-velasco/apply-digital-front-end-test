@@ -14,7 +14,7 @@ interface FavoritesContextState {
 }
 
 export interface IPostProps {
-  storyId: number
+  parentId: number
   storyTitle: string
   author: string
   storyUrl: string
@@ -64,7 +64,7 @@ export const FavoritesProvider = ({ children }: FavoritesProviderProps): JSX.Ele
   const removeStorageById = (item: IPostProps) => {
     if (!favorites) return
     const newFavoriteList = favorites.filter(
-      (favorite: IPostProps) => favorite.storyId !== item.storyId,
+      (favorite: IPostProps) => favorite.parentId !== item.parentId,
     )
     setStateAndSave(newFavoriteList)
   }

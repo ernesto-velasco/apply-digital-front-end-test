@@ -30,13 +30,13 @@ function Home() {
   } = useFavoritesStorage()
 
   // function to return the icon to be shown on card
-  const isInFavoritesIcon = (storyId: number) => {
-    const isInFavs = favorites?.find((o) => o.storyId === storyId)
+  const isInFavoritesIcon = (parentId: number) => {
+    const isInFavs = favorites?.find((o) => o.parentId === parentId)
     return isInFavs ? heartFillIcon : heartIcon
   }
 
-  const isInFavoritesFunc = (storyId: number) => {
-    const isInFavs = favorites?.find((o) => o.storyId === storyId)
+  const isInFavoritesFunc = (parentId: number) => {
+    const isInFavs = favorites?.find((o) => o.parentId === parentId)
     return isInFavs ? removeStorageById : addToStorage
   }
 
@@ -47,10 +47,10 @@ function Home() {
       <div className={styles.posts}>
         {data?.map((post, index) => (
           <PostCard
-            key={`${index}-${post.storyId}`}
+            key={`${index}-${post.parentId}`}
             post={post}
-            handleFavorites={isInFavoritesFunc(post.storyId)}
-            btnIcon={isInFavoritesIcon(post.storyId)}
+            handleFavorites={isInFavoritesFunc(post.parentId)}
+            btnIcon={isInFavoritesIcon(post.parentId)}
           />
         ))}
       </div>
